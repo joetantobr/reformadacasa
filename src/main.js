@@ -171,7 +171,7 @@ function houseView(fl){
     ${roomsHtml}`;
 }
 
-const VERSAO = 'v0.23';
+const VERSAO = 'v0.24';
 const subId = () => Math.random().toString(36).slice(2,10);
 const subsOf = i => Array.isArray(i.subitens) ? i.subitens : [];
 function subsHtml(i){

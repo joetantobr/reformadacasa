@@ -41,8 +41,14 @@ h1{font-size:34px} h2{font-size:26px}
 .building > *{grid-column:1}
 .building > .roof{grid-row:1}
 .building > .addfloor{grid-column:1/-1}
-.roof{min-height:70px;margin:0 3%;background:repeating-linear-gradient(0deg,var(--roof) 0 9px,var(--roof-tile) 9px 11px);color:var(--roof-ink);clip-path:polygon(50% 0,100% 100%,0 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;padding:30px 22% 10px;cursor:pointer}
-.roof[aria-pressed="true"]{background:repeating-linear-gradient(0deg,var(--roof-hi) 0 9px,var(--roof) 9px 11px)}
+.roof{min-height:70px;margin:0 3%;--tile-face:var(--roof-hi);--tile-edge:var(--roof-tile);
+  background:
+    linear-gradient(to top,var(--roof-tile) 0 5px,transparent 5px),
+    radial-gradient(circle at 50% 0,var(--tile-face) 0 8px,var(--tile-edge) 8.5px 10px,transparent 10.5px) 0 0/20px 12px,
+    radial-gradient(circle at 50% 0,var(--tile-face) 0 8px,var(--tile-edge) 8.5px 10px,transparent 10.5px) 10px 6px/20px 12px,
+    var(--roof);color:var(--roof-ink);clip-path:polygon(50% 0,100% 100%,0 100%);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:6px;padding:30px 22% 10px;cursor:pointer}
+.roof[aria-pressed="true"]{filter:brightness(1.2) saturate(1.1)}
+.roof .zlabel{background:var(--roof-tile);padding:2px 8px;border-radius:4px}
 .roof[aria-pressed="true"] .zlabel{text-decoration:underline;text-underline-offset:3px}
 .roof .windows,.yard .windows{margin:0}
 .roof .windows{justify-content:center}
